@@ -7,12 +7,14 @@ const connectDb = require('./config/dbConn')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
 const corsOptions = require('./config/corsOptions')
-const getLogger = require('./services/logger')
-const logger=getLogger("server")
+const logEvents = require('./services/logger')
+const logger=logEvents("server")
 const helmet = require('helmet');
 const morgan = require('morgan');
 const route = require('./routes/root')
 const cors = require('cors')
+
+
 
 connectDb()
 app.use(cookieParser())

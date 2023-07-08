@@ -6,7 +6,7 @@ const logFormat = printf(({ level, message, timestamp, stack }) => {
   return logMessage;
 });
 
-const getLogger = (fileName) => {
+const logEvents = (fileName) => {
   const logger = createLogger({
     format: combine(
       timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -24,4 +24,4 @@ const getLogger = (fileName) => {
   return logger;
 };
 
-module.exports = getLogger;
+module.exports = logEvents;

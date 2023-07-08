@@ -1,4 +1,3 @@
-const whitelist = require('./allowedOrigin')
 const corsOptions = {
   origin: function (origin, cb) {
     if (whitelist.indexOf(origin) !== -1) {
