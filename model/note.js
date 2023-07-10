@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema(
+const TaskSchema = new mongoose.Schema(
   {
     title: { type: String, required: true ,  unique: true},
     decription: { type: String, required: true },
@@ -8,6 +8,6 @@ const userSchema = new mongoose.Schema(
     password: { type: String, required: true },
 }
 );
-const User = mongoose.model("User", userSchema);
+const Task = mongoose.model("Task", TaskSchema);
 
-module.exports = User;
+module.exports = Task;
