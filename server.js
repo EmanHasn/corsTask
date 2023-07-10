@@ -14,13 +14,13 @@ const morgan = require('morgan');
 const route = require('./routes/root')
 const cors = require('cors')
 
-
-
 connectDb()
+app.use(express.json())
 app.use(cookieParser())
 app.use(helmet())
 app.use(morgan('tiny'))
 app.use(cors(corsOptions))
+
 
 app.use('/' , express.static(path.join( __dirname , "public")))
 app.use('/' , route)

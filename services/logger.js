@@ -2,7 +2,7 @@ const { format, createLogger, transports } = require('winston');
 const { timestamp, combine, printf, errors, json } = format;
 
 const logFormat = printf(({ level, message, timestamp, stack }) => {
-  let logMessage = `${timestamp} | MsgID - ${Date.now()} | ${level.toLocaleUpperCase()} | ${stack || (typeof message == 'object' ? JSON.stringify(message) :message )}`;
+    let logMessage = `${timestamp} | MsgID - ${Date.now()} | ${level.toLocaleUpperCase()} | ${stack || (typeof message == 'object' ? JSON.stringify(message) :message )}`;
   return logMessage;
 });
 
